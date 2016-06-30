@@ -13,6 +13,7 @@ var all = require ('../routes/all');
 
 //use routes
 app.use('/millie', millie);
+app.use('/all', all);
 
 //connect to the database - userDb is the database name
 mongoose.connect('mongodb://localhost:27017/userDb');
@@ -34,27 +35,6 @@ app.get('/all', function(req, res) {
   });
 }); //end get all users
 
-// create route
-app.post('/create', function(req, res) {
-  console.log('hit create route');
-  console.log('req.body = ', req.body);
-
-  var newUser = new User({
-    name: req.body.name,
-    username: req.body.username,
-    password: req.body.password
-  });
-
-  newUser.save(function(err) {
-    if(err){
-      console.log(err);
-      res.sendStatus(500);
-    }else{
-      console.log('User saved successfully!');
-      res.sendStatus(200);
-    }
-  });
-});
 
 
 

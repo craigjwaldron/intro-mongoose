@@ -9,8 +9,8 @@ var User = require('../models/user');
 router.get('/', function(req, res) {
   console.log('in millie get');
   var millie = new User({
-    name: 'Millie',
-    username: 'millie11',
+    name: 'Milliee',
+    username: 'millie111',
     password: 'reallybadpassword'
   });
 
